@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtZ Pc</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">
+
+    <style>
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 12px 20px rgba(0, 123, 255, 0.4);
+            z-index: 10;
+        }
+
+        body {
+            padding-top: 70px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .logo {
+            font-family: "Pirata One", system-ui;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 3rem;
+        }
+
+        footer {
+            background-color: #000;
+            color: #FFF;
+            text-align: center;
+        }
+
+        body {
+            background-color: #d3d3d3;
+        }
+
+        label {
+            display: block;
+        }
+
+        .alert {
+            margin-top: 20px;
+            animation: trocarCor 1.5s infinite alternate;
+            color: #000;
+            border: 3px solid #000;
+            border-radius: 8px;
+        }
+
+        @keyframes trocarCor {
+            0% {
+                background-color: #F08080
+            }
+
+            50% {
+                background-color: #ADD8E6
+            }
+
+            100% {
+                background-color: #90EE90
+            }
+        }
+
+        #cadastro {
+            width: 90%;
+            margin: 50px auto;
+            max-width: 600px;
+            background-color: #fff;
+            padding: 30px 25px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4);
+            margin: 20px auto;
+        }
+
+        #cadastro h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            text-align: center;
+            color: #333;
+        }
+
+        #cadastro label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        #cadastro input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        #cadastro input:focus {
+            border-color: #4a90e2;
+            outline: none;
+        }
+
+        #botao {
+            width: 100%;
+            padding: 12px;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #botao:hover {
+            background-color: #357ab8;
+        }
+
+        input[type="range"].azul {
+            height: 12px;
+            background: #007bff;
+            border-radius: 6px;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        input[type="range"].azul::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            background: #fff;
+            /* bolinha branca */
+            border: 2px solid #007bff;
+            /* borda azul */
+            cursor: pointer;
+            border-radius: 50%;
+            margin-top: -6px;
+        }
+
+        input[type="range"].azul::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            background: #fff;
+            /* bolinha branca */
+            border: 2px solid #007bff;
+            /* borda azul */
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        input[type="range"].azul::-webkit-slider-runnable-track {
+            height: 12px;
+            background: #007bff;
+            border-radius: 6px;
+        }
+
+        input[type="range"].azul::-moz-range-track {
+            height: 12px;
+            background: #007bff;
+            border-radius: 6px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-primary fixed-top" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><i class="fa fa-home"></i></a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#card1">Computadores</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#card2">Peças</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Hardware
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Processadores</a></li>
+                            <li><a class="dropdown-item" href="#">Placa Mãe</a></li>
+                            <li><a class="dropdown-item" href="#">Memórias</a></li>
+                            <li><a class="dropdown-item" href="#">Placa de Vídeo</a></li>
+                            <li><a class="dropdown-item" href="#">Fonte</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <button type="button" class="btn btn-info">Monte seu Pc</button>
+                            <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Compartilhar
+                            </button>
+                        </a>
+                    </li>
+                </ul>
+                <div class="ms-auto d-flex align-items-center">
+                    <button type="button" class="btn btn-info position-relative">
+                        Perfil
+                        <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+                            <span class="visually-hidden">New alerts</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row my-3">
+            <div class="col-lg-8">
+                <h1 class="logo"> <i class="fa-solid fa-microchip"></i> ArtZ Pc</h1>
+            </div>
+            <div class="col-lg-4">
+                <form>
+                    <div class="input-group">
+                        <input type="text" name="pesquisar" placeholder="Search..." class="form-control">
+                        <button class="btn btn-dark">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="col-lg-8">
+                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="Imagens/A.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="Imagens/B.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="Imagens/C.jpg" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <strong>Quem Somos Nós:</strong>
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <strong>ArtZ Pc</strong> é uma empresa 100% e-commerce que está no mercado para fazer a diferença, mais precisamente no segmento de máquinas de alta performance para gamers e no setor corporativo com workstations. Vivemos um tempo que é imprescindível a necessidade da qualidade dos serviços prestados e vamos além, de um pós venda excepcional. São nesses aspectos que nos diferenciamos da concorrência, podemos dizer que saímos na frente por sermos gamers, você cliente estará comprando maquinas de quem vivência este estilo de vida no dia-dia, nós sabemos exatamente do que o cliente precisa, quais são suas necessidades. No pós venda podemos dizer que temos o SAC 2.0, um sistema novo de integração loja cliente, tornando rápida qualquer duvida ou esclarecimento que o cliente necessite elucidar. Trabalhamos sempre com profissionalismo e de forma transparente, tentando sempre criar uma relação de amizade com o cliente e deixando sempre claro que qualquer que seja a duvida do nosso cliente que o mesmo nos procure. Que estaremos sempre aqui a disposição para ajudar, conte sempre conosco.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <strong>Por que a ArtZ Pc:</strong>
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Nós tratamos todo cliente amigo com respeito. Cliente esse que é o nosso maior Patrimonio;
+                                Nós oferecemos produtos da mais alta qualidade a preços mais baixos possíveis da indústria;
+                                Buscamos sempre ter os melhores fornecedores e as melhores marcas e os mais atualizados produtos para os nossos clientes;
+                                Garantia Total do PC é de 1 ano mas alguns componente podem variar de 1 a 5 anos com a garantia estendida do fabricante.
+                                Sua Maquina sai da loja sem lacre, dando total liberdade ao cliente para um futuro upgrade ou mesmo uma limpeza de rotina que tenha que ser feita;
+                                Tenha Certeza de que não somos apenas vendedores e tecnicos e sim verdadeiros gamers e amantes de hardware, com isso cada Maquina é montada com o maior carinho e responsabilidade para nosso cliente.
+
+                                Porque no final do dia, nós amamos o que vendemos...
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Compartilhar</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/v0iBpTe7stc?si=QspzKogyhToE9vdn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <strong>Política de Privacidade</strong>
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Durante todo tempo de navegação e compra em nosso site, nos preocupamos e temos total compromisso com a segurança e privacidade dos dados de nossos Clientes. Todo processo de pagamento é feito diretamente dentro de ambiente seguro dos bancos e das operadoras de crédito, asseguramos ainda que, todos os dados cadastrais de nossos Clientes não serão vendidos, trocados, divulgados ou repassados para terceiros, exceto quando necessários para o processo de entrega, devolução, garantia, crédito e cobrança ou para participação de algumas campanhas promocionais. Você só receberá emails, campanhas ou promoções da StudioPC, se previamente autorizar em nosso site. Para sua maior segurança, recomendamos que em nenhuma hipótese, divulgue seu login e senha para terceiros.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section id="cadastro">
+            <h1>Cadastro:</h1>
+            <form action="salvar.php" method="get">
+                <label for="n">Nome</label>
+                <input type="text" name="nome" id="n" placeholder="Digite seu nome">
+
+                <label for="e">E-mail</label>
+                <input type="email" name="email" id="e" placeholder="Digite seu E-mail">
+
+                <label for="s">Senha</label>
+                <input type="password" name="senha" id="s" placeholder="Digite sua Senha">
+
+                <button type="submit" id="botao">Enviar / Entrar</button>
+            </form>
+        </section>
+        <section id="satisfacao" class="mt-4">
+            <h3>Deixe seu nível de satisfação:</h3>
+
+            <input type="range" class="form-range azul" min="0" max="100" step="1" id="satisfacaoRange" value="50">
+
+            <div class="mt-2">
+                <span>Nível de satisfação: </span><strong id="valorSatisfacao">50%</strong>
+            </div>
+        </section>
+
+        <script>
+            const slider = document.getElementById('satisfacaoRange');
+            const valor = document.getElementById('valorSatisfacao');
+
+            slider.addEventListener('input', () => {
+                valor.textContent = slider.value + '%';
+            });
+        </script>
+
+        <div class="alert alert-primary" role="alert" id="alert">
+            <h4 class="alert-heading">CUPOM: ARTZ25</h4>
+            <p>25% de desconto em qualquer produto da ArtZ Pc.</p>
+            <hr>
+            <p class="mb-0">Venha Já pra melhor do Brasil !</p>
+        </div>
+        <h1 id="card2">Peças:</h1>
+        <ul class="nav nav-underline">
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Processadores</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Memórias</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Kit Upgrade</a>
+            </li>
+        </ul>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card h-100">
+                    <img src="Imagens/D.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Processador Intel Core I3-12100F</h5>
+                        <p class="card-text">Processador Intel Core I3-12100F, Alder Lake, 3.3Ghz (4.3Ghz Turbo), 4 Núcleos, 8 Threads, LGA 1700, Sem Vídeo</p>
+                        <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            De R$ 1.030,00 Por R$ 896,10 No Pix !
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">R$ 1.030,00 no cartão em até 12x de R$ 85,83 sem juros</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card h-100">
+                    <img src="Imagens/E.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Memória Ram Gamer Corsair Dominator</h5>
+                        <p class="card-text">Memória Ram Gamer Corsair Dominator Platinum RGB 64GB (2x32GB) DDR5, 5600MHz , CL40 - CMT64GX5M2B5600Z40K</p>
+                        <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            De R$ 3.217,24 Por R$ 2.799,00 No Pix !
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">R$ 3.217,24 no cartão em até 12x de R$ 268,10 sem juros</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card h-100">
+                    <img src="Imagens/F.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Kit Upgrade</h5>
+                        <p class="card-text">Kit Upgrade Processador AMD Ryzen 7 5700X + Placa mãe B550 AM4 + 16GB DDR4 3200MHz + Water Cooler 240mm</p>
+                        <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            De R$ 3.565,00 Por R$ 3.101,55 No Pix !
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">R$ 3.565,00 no cartão em até 12x de R$ 297,08 sem juros</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h1 id="card1">Pc's Gamers:</h1>
+        <ul class="nav nav-underline">
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Linha S</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Linha S+</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Linha X</a>
+            </li>
+        </ul>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card h-100">
+                    <img src="Imagens/G.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Pc Gamer Zeta WH</h5>
+                        <p class="card-text">AMD Ryzen 5 5600 / 16GB DDR4 / Radeon RX 6600 8GB / NVME 500GB Full HD (1920x1080)</p>
+                        <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            De R$ 4.891,12 Por R$ 4.255,27 No Pix !
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">R$ 4.891,12 no cartão em até 12x de R$ 407,59 sem juros</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card h-100">
+                    <img src="Imagens/H.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Pc Gamer Legacy</h5>
+                        <p class="card-text">Ryzen 5 5600X / 16GB DDR4 / GeForce RTX 4060 Ti 8GB / SSD 480GB 2.5k (2560x1440)</p>
+                        <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            De R$ 9.086,72 Por R$ 7.905,45 No Pix !
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">R$ 9.086,72 no cartão em até 12x de R$ 757,23 sem juros</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card h-100">
+                    <img src="Imagens/I.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Pc Gamer Stumble</h5>
+                        <p class="card-text">i3 8100 / 8GB DDR4 / Radeon RX 550 4GB / SSD 240GB Full HD (1920x1080)</p>
+                        <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            De R$ 2.325,75 Por R$ 2.023,40 No Pix !
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">R$ 2.325,75 no cartão em até 12x de R$ 193,81 sem juros</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Compartilhar</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        https://www.studiopc.com.br/?srsltid=AfmBOooh_OVocLJxCg6y6YuhW-oChO_RLoRKSVoBqhTf08hK5-tyQsWe
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav aria-label="...">
+            <ul class="pagination">
+                <li class="page-item disabled">
+                    <a class="page-link">Páginas:</a>
+                </li>
+                <li class="page-item active" class="page-item"><a class="page-link" href="#">1</a></li>
+                <li>
+                    <a class="page-link" href="#" aria-current="page">2</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">></a>
+                </li>
+            </ul>
+        </nav>
+        <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+
+        <footer>
+            <p class="Direitos">&copy; 2025 Todos os Direitos Reservados ::
+                Desing by; Arthur Pereira </p>
+        </footer>
+</body>
+
+</html>
